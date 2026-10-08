@@ -81,7 +81,7 @@ macro_rules! crate_root {
 
             #[cfg(feature = "std")]
             pub use std::collections::{HashMap, HashSet};
-            #[cfg(feature = "std")]
+            #[cfg(all(any(unix, windows), feature = "std"))]
             pub use std::ffi::{OsStr, OsString};
             #[cfg(feature = "std")]
             pub use std::hash::{BuildHasher, Hash};
